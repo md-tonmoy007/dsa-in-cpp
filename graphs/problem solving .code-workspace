@@ -1,0 +1,22 @@
+{
+	"folders": [
+		{
+			"path": "../problem solving "
+		},
+		{
+			"path": "../DSA"
+		},
+		{
+			"path": "../c programming"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"iostream": "cpp",
+			"vector": "cpp"
+		}
+	}
+}
