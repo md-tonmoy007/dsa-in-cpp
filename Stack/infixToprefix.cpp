@@ -24,17 +24,20 @@ string infixToPrefix(string infix) {
     for (char& ch : infix) {
         if (isalnum(ch)) {
             prefix = ch + prefix;
+            cout << prefix << endl;
         } else if (ch == ')') {
             operators.push(ch);
         } else if (ch == '(') {
             while (!operators.empty() && operators.top() != ')') {
                 prefix = operators.top() + prefix;
+                cout << prefix << endl;
                 operators.pop();
             }
             operators.pop(); // Discard the ')'
         } else {
             while (!operators.empty() && precedence(ch) < precedence(operators.top())) {
                 prefix = operators.top() + prefix;
+                cout << prefix << endl;
                 operators.pop();
             }
             operators.push(ch);
@@ -43,6 +46,7 @@ string infixToPrefix(string infix) {
 
     while (!operators.empty()) {
         prefix = operators.top() + prefix;
+        cout << prefix << endl;
         operators.pop();
     }
 
