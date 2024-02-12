@@ -1,5 +1,7 @@
 #include <iostream>
 
+using namespace std;
+
 class Deque {
 private:
     int* arr;
@@ -17,9 +19,7 @@ public:
         size = 0;
     }
 
-    ~Deque() {
-        delete[] arr;
-    }
+
 
     void push_front(int element) {
         if (isFull()) {
@@ -30,7 +30,10 @@ public:
         if (frontIndex == -1)
             frontIndex = 0;
 
+        
+
         frontIndex = (frontIndex - 1 + capacity) % capacity;
+        cout <<"push front: " <<  frontIndex << endl;
         arr[frontIndex] = element;
         size++;
     }
@@ -59,6 +62,7 @@ public:
             frontIndex = rearIndex = -1;
         else
             frontIndex = (frontIndex + 1) % capacity;
+            cout <<"pop front: "<<  frontIndex << endl;
 
         size--;
     }
@@ -107,18 +111,41 @@ public:
 };
 
 int main() {
-    Deque myDeque(5);
+    Deque myDeque(10);
 
     myDeque.push_front(10);
     myDeque.push_front(20);
     myDeque.push_back(30);
+    myDeque.push_front(40);
+    myDeque.push_back(50);
+    myDeque.push_back(60);
+    myDeque.push_front(70);
+    myDeque.push_back(80);
+
+    
 
     std::cout << "Front element: " << myDeque.front() << std::endl;
     std::cout << "Back element: " << myDeque.back() << std::endl;
 
     myDeque.pop_front();
-    myDeque.pop_back();
+
+    std::cout << "Front element: " << myDeque.front() << std::endl;
+    std::cout << "Back element: " << myDeque.back() << std::endl;
+    
+    myDeque.pop_front();
+
+    std::cout << "Front element: " << myDeque.front() << std::endl;
+    std::cout << "Back element: " << myDeque.back() << std::endl;
+
+    myDeque.pop_front();
+
+    std::cout << "Front element: " << myDeque.front() << std::endl;
+    std::cout << "Back element: " << myDeque.back() << std::endl;
+
+    myDeque.pop_front();
+
+    std::cout << "Front element: " << myDeque.front() << std::endl;
+    std::cout << "Back element: " << myDeque.back() << std::endl;
 
     return 0;
 }
-
