@@ -17,7 +17,7 @@ string infixToPostfix(string infix) {
     string postfix = "";
 
     for (char& ch : infix) {
-        if (isalnum(ch)) {
+         if (isalnum(ch)) {
             postfix += ch;
         } else if (ch == '(') {
             stk.push(ch);
