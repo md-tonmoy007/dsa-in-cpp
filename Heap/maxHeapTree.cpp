@@ -110,6 +110,8 @@ int main() {
     cout << "printing after heap sort" << endl;
     heapSort(h);
 
+    cout << endl;
+    cout << endl;
 
     return 0;
 }
