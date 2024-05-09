@@ -25,6 +25,29 @@ int depth(Node * root, int x) {
  
     return dist;
     }
+
+
+int depthez(Node* root, int x){
+
+    if(root == NULL) return -1;
+    int dist = -1;
+
+    if(root->data == x){
+        return dist+1;
+    }
+
+    dist = depthez(root->left, x);
+    if (dist >= 0){
+        return dist+1;
+    }
+
+    dist = depthez(root->right, x);
+    if (dist >= 0){
+        return dist+1;
+    }
+
+    return dist;
+}
 int findHeightUtil(Node* root, int x, int& height)
 {
     if (root == NULL) {
@@ -66,5 +89,6 @@ int main()
     root->right->right = new Node(35);
 
     cout << depth(root, 25) << endl; 
+    cout << depthez(root, 25) << endl;
     cout << findHeight(root, 5) << endl;
 }
