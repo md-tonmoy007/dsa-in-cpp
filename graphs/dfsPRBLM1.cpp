@@ -5,6 +5,8 @@
 
 using namespace std;
 
+vector<vector<int>> cc;
+vector<int> current_cc;
 
 const int N = 1e5+10;
 vector<int> g[N];
@@ -19,6 +21,7 @@ void dfs(int vertex)
     */
 
    vis[vertex] = true;
+   current_cc.push_back(vertex);
     for (int child: g[vertex]){
 
         /*take action on child before entering the child*/
@@ -45,8 +48,19 @@ int main()
     for(int i= 1;i <= n; i++)
     {
         if (vis[i]) continue;
+        current_cc.clear();
         dfs(i); 
+        cc.push_back(current_cc);
+
         ct++;
     }
-    cout << ct << endl;
+    // cout << ct << endl;
+    cout << cc.size() << endl;
+    for(auto c_cc:cc){
+        for(int v: c_cc){
+            cout << v << " ";
+        }
+        cout << endl;
+    }
+
 }

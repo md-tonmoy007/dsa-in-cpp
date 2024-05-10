@@ -67,6 +67,15 @@ public:
         cout << endl;
     }
 
+
+    void DangerousHeapSort(){
+        for(int i = 0; i < heap.size(); i++){
+            int max = extractMax();
+            cout << max << " ";
+        }
+        cout << endl;
+    }
+
 };
 
 MaxHeap constructHeap(vector<int>& arr) {
@@ -86,13 +95,13 @@ void heapSort(MaxHeap MH) {
     int arr[heap.size()];
     for (int i = 0; i < heap.size(); i++) {
         arr[i] = MH.extractMax();
-        cout << arr[i] << " ";
+        cout << arr[i] << " "; 
     }
     cout << endl;
 }
 
 int main() {
-    vector<int> arr = {44, 30, 50, 22, 60, 55, 77, 55};
+    vector<int> arr = {44, 30, 50, 22, 60, 55, 77};
     cout << "Original array: ";
     for (int num : arr) {
         cout << num << " ";
@@ -103,7 +112,7 @@ int main() {
     h = constructHeap(arr);
     h.display();
     cout << endl;
-    h.remove(22);
+    h.remove(30);
     cout << "display after deleting 22" << endl;
     h.display();
     cout << endl;

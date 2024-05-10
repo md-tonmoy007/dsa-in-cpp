@@ -23,7 +23,7 @@ class sol {
     public:
     Node* cloneGraph(Node* node){
         unordered_map<Node*, Node*> hashTable;
-        return dfs(node, hashTable)
+        return dfs(node, hashTable);
     }
     Node* dfs(Node* node, unordered_map<Node*, Node*> &hashtable)
     {
@@ -36,9 +36,5 @@ class sol {
         }
         return clone;
     }
-}
+};
 
-/*
-int main(){
-
-}*/
