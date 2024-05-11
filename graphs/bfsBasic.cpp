@@ -28,7 +28,7 @@ void dfs(int source)
             {
                 q.push(child);
                 vis[child] = 1;
-                level[child] = level[cur_v]+1;
+                // level[child] = level[cur_v]+1;
             }
         }
 
@@ -50,8 +50,8 @@ int main()
     }
     dfs(1);
 
-    for (int i = 1; i <=n ; i++)
-    {
-        cout << i << ";" << level[i] << endl;
-    }
+    // for (int i = 1; i <=n ; i++)
+    // {
+    //     cout << i << ";" << level[i] << endl;
+    // }
 }

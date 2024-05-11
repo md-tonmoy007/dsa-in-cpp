@@ -90,15 +90,7 @@ MaxHeap constructHeap(vector<int>& arr) {
 }
 
 
-void heapSort(MaxHeap MH) {
-    vector<int> heap = MH.heap;
-    int arr[heap.size()];
-    for (int i = 0; i < heap.size(); i++) {
-        arr[i] = MH.extractMax();
-        cout << arr[i] << " "; 
-    }
-    cout << endl;
-}
+
 
 int main() {
     vector<int> arr = {44, 30, 50, 22, 60, 55, 77};
@@ -117,7 +109,6 @@ int main() {
     h.display();
     cout << endl;
     cout << "printing after heap sort" << endl;
-    heapSort(h);
 
     cout << endl;
     cout << endl;
